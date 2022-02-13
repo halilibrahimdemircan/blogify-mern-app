@@ -1,8 +1,9 @@
 import React from 'react'
-import { makeStyles, ThemeProvider } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 import {CssBaseline, Container, Grid, AppBar, Toolbar, Typography, Button, IconButton} from "@material-ui/core"
 import PenIcon from "@material-ui/icons/Create";
 import {BrowserRouter as Router, Route, Navigate, Routes} from "react-router-dom"
+import PostList from './components/PostList';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,6 +42,7 @@ const App = () => {
             <Routes>
               <Route exact path='/posts' component={PostList}/>
             </Routes>
+            <Navigate from="/" to="/posts" />
           </Router>
         </Grid>
       </Grid>
